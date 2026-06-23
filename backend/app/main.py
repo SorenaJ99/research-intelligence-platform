@@ -9,3 +9,11 @@ app = FastAPI(
 @app.get("/")
 def health_check():
     return {"status": "ok"}
+
+
+@app.get("/about")
+def about():
+    return {
+        "project": "Research Intelligence Platform",
+        "phase": "Backend Foundation"
+    }
