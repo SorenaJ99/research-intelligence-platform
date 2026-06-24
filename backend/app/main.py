@@ -1,19 +1,10 @@
 from fastapi import FastAPI
 
+from app.api.health import router as health_router
+
 app = FastAPI(
     title="Research Intelligence Platform",
     version="0.1.0"
 )
 
-
-@app.get("/")
-def health_check():
-    return {"status": "ok"}
-
-
-@app.get("/about")
-def about():
-    return {
-        "project": "Research Intelligence Platform",
-        "phase": "Backend Foundation"
-    }
+app.include_router(health_router)
